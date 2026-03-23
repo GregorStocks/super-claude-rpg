@@ -20,25 +20,81 @@ const SEQUENCES = [
 	'positional encoding tells the model where tokens are',
 	'the softmax function converts logits to probabilities',
 	'cross entropy loss penalizes confident wrong predictions',
-	'the learning rate controls how fast parameters change',
+	'the learning rate controls how fast parameters change'
 ];
 
 const VOCAB = [
-	'the', 'a', 'an', 'is', 'was', 'and', 'or', 'but', 'not', 'in',
-	'of', 'to', 'for', 'with', 'on', 'at', 'from', 'by', 'that', 'this',
-	'it', 'as', 'are', 'were', 'be', 'has', 'had', 'do', 'does', 'did',
-	'will', 'would', 'could', 'should', 'may', 'might', 'can', 'shall',
-	'model', 'token', 'loss', 'data', 'layer', 'network', 'weight',
-	'gradient', 'function', 'output', 'input', 'attention', 'embedding',
-	'parameter', 'training', 'prediction', 'sequence', 'pattern',
-	'I', 'you', 'we', 'they', 'he', 'she', 'because', '<EOS>',
+	'the',
+	'a',
+	'an',
+	'is',
+	'was',
+	'and',
+	'or',
+	'but',
+	'not',
+	'in',
+	'of',
+	'to',
+	'for',
+	'with',
+	'on',
+	'at',
+	'from',
+	'by',
+	'that',
+	'this',
+	'it',
+	'as',
+	'are',
+	'were',
+	'be',
+	'has',
+	'had',
+	'do',
+	'does',
+	'did',
+	'will',
+	'would',
+	'could',
+	'should',
+	'may',
+	'might',
+	'can',
+	'shall',
+	'model',
+	'token',
+	'loss',
+	'data',
+	'layer',
+	'network',
+	'weight',
+	'gradient',
+	'function',
+	'output',
+	'input',
+	'attention',
+	'embedding',
+	'parameter',
+	'training',
+	'prediction',
+	'sequence',
+	'pattern',
+	'I',
+	'you',
+	'we',
+	'they',
+	'he',
+	'she',
+	'because',
+	'<EOS>'
 ];
 
-export type Upgrade = {
+export interface Upgrade {
 	name: string;
 	description: string;
 	purchased: boolean;
-};
+}
 
 function generateTokenChoices(correctToken: string): { token: string; prob: number }[] {
 	// Pick 3 random wrong tokens
@@ -56,7 +112,7 @@ function generateTokenChoices(correctToken: string): { token: string; prob: numb
 
 	const result = choices.map((token, i) => ({
 		token,
-		prob: i === 0 ? correctProb : (wrongProbs[i - 1] / wrongSum) * remaining,
+		prob: i === 0 ? correctProb : (wrongProbs[i - 1] / wrongSum) * remaining
 	}));
 
 	// Shuffle so correct isn't always first
@@ -85,7 +141,7 @@ function createGameState() {
 		{ name: 'More Parameters', description: 'Scale up the network', purchased: false },
 		{ name: 'Larger Context', description: 'See more tokens at once', purchased: false },
 		{ name: 'Code Corpus', description: 'Train on source code', purchased: false },
-		{ name: 'Dialogue Corpus', description: 'Train on conversations', purchased: false },
+		{ name: 'Dialogue Corpus', description: 'Train on conversations', purchased: false }
 	]);
 
 	// Progress (0-100, representing training progress through Act 1)
@@ -98,8 +154,8 @@ function createGameState() {
 	const currentCorrectToken = $derived(tokens[currentTokenIdx] ?? null);
 	const isSequenceComplete = $derived(currentTokenIdx >= tokens.length);
 
-	function initChoices() {
-		if (currentCorrectToken) {
+	function initChoices(): void {
+		if (currentCorrectToken !== null) {
 			choices = generateTokenChoices(currentCorrectToken);
 		}
 	}
@@ -130,7 +186,7 @@ function createGameState() {
 			// Move to next sequence
 			sequenceHistory = [
 				...sequenceHistory,
-				SEQUENCES[currentSequenceIdx % SEQUENCES.length],
+				SEQUENCES[currentSequenceIdx % SEQUENCES.length]
 			].slice(-5);
 			currentSequenceIdx++;
 			currentTokenIdx = 0;
@@ -160,22 +216,50 @@ function createGameState() {
 	initChoices();
 
 	return {
-		get loss() { return loss; },
-		get compute() { return compute; },
-		get context() { return context; },
-		get tokensProcessed() { return tokensProcessed; },
-		get currentSequence() { return currentSequence; },
-		get visibleTokens() { return visibleTokens; },
-		get currentCorrectToken() { return currentCorrectToken; },
-		get isSequenceComplete() { return isSequenceComplete; },
-		get choices() { return choices; },
-		get feedbackMessage() { return feedbackMessage; },
-		get feedbackType() { return feedbackType; },
-		get upgrades() { return upgrades; },
-		get progress() { return progress; },
-		get sequenceHistory() { return sequenceHistory; },
+		get loss() {
+			return loss;
+		},
+		get compute() {
+			return compute;
+		},
+		get context() {
+			return context;
+		},
+		get tokensProcessed() {
+			return tokensProcessed;
+		},
+		get currentSequence() {
+			return currentSequence;
+		},
+		get visibleTokens() {
+			return visibleTokens;
+		},
+		get currentCorrectToken() {
+			return currentCorrectToken;
+		},
+		get isSequenceComplete() {
+			return isSequenceComplete;
+		},
+		get choices() {
+			return choices;
+		},
+		get feedbackMessage() {
+			return feedbackMessage;
+		},
+		get feedbackType() {
+			return feedbackType;
+		},
+		get upgrades() {
+			return upgrades;
+		},
+		get progress() {
+			return progress;
+		},
+		get sequenceHistory() {
+			return sequenceHistory;
+		},
 		selectToken,
-		purchaseUpgrade,
+		purchaseUpgrade
 	};
 }
 

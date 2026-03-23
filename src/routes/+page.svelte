@@ -40,18 +40,24 @@
 	<section class="sequence-window">
 		<h2>SEQUENCE WINDOW</h2>
 		<div class="sequence-text">
-			{#each game.sequenceHistory as line}
+			{#each game.sequenceHistory as line, idx (idx)}
 				<p class="history-line">{line}</p>
 			{/each}
 			<p class="current-line">
-				{game.visibleTokens.join(' ')}{#if !game.isSequenceComplete}<span class="cursor">|</span>{/if}
+				{game.visibleTokens.join(' ')}{#if game.isSequenceComplete !== true}<span class="cursor"
+						>|</span
+					>{/if}
 			</p>
 		</div>
 	</section>
 
 	<!-- Feedback -->
-	{#if game.feedbackMessage}
-		<div class="feedback" class:correct={game.feedbackType === 'correct'} class:wrong={game.feedbackType === 'wrong'}>
+	{#if game.feedbackMessage !== null}
+		<div
+			class="feedback"
+			class:correct={game.feedbackType === 'correct'}
+			class:wrong={game.feedbackType === 'wrong'}
+		>
 			{game.feedbackMessage}
 		</div>
 	{/if}
@@ -60,7 +66,7 @@
 	<section class="token-choices">
 		<h2>CHOOSE NEXT TOKEN</h2>
 		<div class="choices-grid">
-			{#each game.choices as choice}
+			{#each game.choices as choice (choice.token)}
 				<button class="token-btn" onclick={() => game.selectToken(choice.token)}>
 					<span class="token-text">"{choice.token}"</span>
 					<span class="token-prob">p={choice.prob.toFixed(2)}</span>
@@ -73,14 +79,14 @@
 	<section class="upgrades">
 		<h2>UPGRADES</h2>
 		<div class="upgrades-grid">
-			{#each game.upgrades as upgrade, i}
+			{#each game.upgrades as upgrade, i (upgrade.name)}
 				<button
 					class="upgrade-btn"
 					class:purchased={upgrade.purchased}
 					disabled={upgrade.purchased}
 					onclick={() => game.purchaseUpgrade(i)}
 				>
-					{upgrade.purchased ? '✓ ' : '+ '}{upgrade.name}
+					{upgrade.purchased === true ? '✓ ' : '+ '}{upgrade.name}
 				</button>
 			{/each}
 		</div>
@@ -146,11 +152,21 @@
 		height: 100%;
 	}
 
-	.progress-segment.red { background: #e74c3c; }
-	.progress-segment.yellow { background: #f39c12; }
-	.progress-segment.green { background: #2ecc71; }
-	.progress-segment.blue { background: #3498db; }
-	.progress-segment.gray { background: #95a5a6; }
+	.progress-segment.red {
+		background: #e74c3c;
+	}
+	.progress-segment.yellow {
+		background: #f39c12;
+	}
+	.progress-segment.green {
+		background: #2ecc71;
+	}
+	.progress-segment.blue {
+		background: #3498db;
+	}
+	.progress-segment.gray {
+		background: #95a5a6;
+	}
 
 	/* Stats */
 	.stats-bar {
@@ -227,7 +243,9 @@
 	}
 
 	@keyframes blink {
-		50% { opacity: 0; }
+		50% {
+			opacity: 0;
+		}
 	}
 
 	/* Feedback */
@@ -254,8 +272,14 @@
 	}
 
 	@keyframes fadeIn {
-		from { opacity: 0; transform: translateY(-4px); }
-		to { opacity: 1; transform: translateY(0); }
+		from {
+			opacity: 0;
+			transform: translateY(-4px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	/* Token choices */
@@ -277,7 +301,9 @@
 		font-family: inherit;
 		font-size: 0.82rem;
 		cursor: pointer;
-		transition: background 0.1s, border-color 0.1s;
+		transition:
+			background 0.1s,
+			border-color 0.1s;
 	}
 
 	.token-btn:hover {

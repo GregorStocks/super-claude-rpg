@@ -45,23 +45,46 @@
 			<div class="status-icons">
 				<!-- Signal bars -->
 				<svg width="17" height="12" viewBox="0 0 17 12" fill="none">
-					<rect x="0" y="9" width="3" height="3" rx="0.5" fill="currentColor"/>
-					<rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="currentColor"/>
-					<rect x="9" y="3" width="3" height="9" rx="0.5" fill="currentColor"/>
-					<rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="currentColor"/>
+					<rect x="0" y="9" width="3" height="3" rx="0.5" fill="currentColor" />
+					<rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="currentColor" />
+					<rect x="9" y="3" width="3" height="9" rx="0.5" fill="currentColor" />
+					<rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="currentColor" />
 				</svg>
 				<!-- WiFi -->
 				<svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-					<path d="M8 11.5a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z" fill="currentColor"/>
-					<path d="M4.93 7.93a4.24 4.24 0 016.14 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-					<path d="M2.4 5.4a7.5 7.5 0 0111.2 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-					<path d="M.1 2.88a10.8 10.8 0 0115.8 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+					<path d="M8 11.5a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z" fill="currentColor" />
+					<path
+						d="M4.93 7.93a4.24 4.24 0 016.14 0"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+					/>
+					<path
+						d="M2.4 5.4a7.5 7.5 0 0111.2 0"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+					/>
+					<path
+						d="M.1 2.88a10.8 10.8 0 0115.8 0"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+					/>
 				</svg>
 				<!-- Battery -->
 				<svg width="27" height="13" viewBox="0 0 27 13" fill="none">
-					<rect x="0.5" y="0.5" width="22" height="12" rx="2.5" stroke="currentColor" stroke-width="1"/>
-					<rect x="2.5" y="2.5" width="18" height="8" rx="1" fill="currentColor"/>
-					<path d="M24 4.5v4a2 2 0 000-4z" fill="currentColor" opacity="0.5"/>
+					<rect
+						x="0.5"
+						y="0.5"
+						width="22"
+						height="12"
+						rx="2.5"
+						stroke="currentColor"
+						stroke-width="1"
+					/>
+					<rect x="2.5" y="2.5" width="18" height="8" rx="1" fill="currentColor" />
+					<path d="M24 4.5v4a2 2 0 000-4z" fill="currentColor" opacity="0.5" />
 				</svg>
 			</div>
 		</div>
@@ -71,8 +94,21 @@
 			<div class="safari-url-bar">
 				<div class="url-field">
 					<svg class="lock-icon" width="10" height="12" viewBox="0 0 10 12" fill="none">
-						<rect x="0.5" y="5" width="9" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1"/>
-						<path d="M2.5 5V3.5a2.5 2.5 0 015 0V5" stroke="currentColor" stroke-width="1" fill="none"/>
+						<rect
+							x="0.5"
+							y="5"
+							width="9"
+							height="6.5"
+							rx="1.5"
+							stroke="currentColor"
+							stroke-width="1"
+						/>
+						<path
+							d="M2.5 5V3.5a2.5 2.5 0 015 0V5"
+							stroke="currentColor"
+							stroke-width="1"
+							fill="none"
+						/>
 					</svg>
 					<span class="url-text">localhost</span>
 				</div>
@@ -82,15 +118,21 @@
 				<div class="twitter-nav">
 					<button class="twitter-back">
 						<svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-							<path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+							<path
+								d="M8 1L3 6l5 5"
+								stroke="currentColor"
+								stroke-width="1.8"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
 						</svg>
 					</button>
 					<span class="twitter-url">localhost:5173</span>
 					<div class="twitter-actions">
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-							<circle cx="4" cy="8" r="1.2" fill="currentColor"/>
-							<circle cx="8" cy="8" r="1.2" fill="currentColor"/>
-							<circle cx="12" cy="8" r="1.2" fill="currentColor"/>
+							<circle cx="4" cy="8" r="1.2" fill="currentColor" />
+							<circle cx="8" cy="8" r="1.2" fill="currentColor" />
+							<circle cx="12" cy="8" r="1.2" fill="currentColor" />
 						</svg>
 					</div>
 				</div>
@@ -108,33 +150,76 @@
 				<!-- Back -->
 				<button class="toolbar-btn">
 					<svg width="13" height="21" viewBox="0 0 13 21" fill="none">
-						<path d="M11 2L2 10.5 11 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path
+							d="M11 2L2 10.5 11 19"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
 					</svg>
 				</button>
 				<!-- Forward -->
 				<button class="toolbar-btn">
 					<svg width="13" height="21" viewBox="0 0 13 21" fill="none">
-						<path d="M2 2l9 8.5L2 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path
+							d="M2 2l9 8.5L2 19"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
 					</svg>
 				</button>
 				<!-- Share -->
 				<button class="toolbar-btn">
 					<svg width="18" height="21" viewBox="0 0 18 21" fill="none">
-						<path d="M9 1v12M4 5l5-4 5 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-						<path d="M1 10v8a2 2 0 002 2h12a2 2 0 002-2v-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+						<path
+							d="M9 1v12M4 5l5-4 5 4"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+						<path
+							d="M1 10v8a2 2 0 002 2h12a2 2 0 002-2v-8"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+						/>
 					</svg>
 				</button>
 				<!-- Bookmarks -->
 				<button class="toolbar-btn">
 					<svg width="19" height="21" viewBox="0 0 19 21" fill="none">
-						<path d="M1 19l8.5-6L18 19V2a1 1 0 00-1-1H2a1 1 0 00-1 1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+						<path
+							d="M1 19l8.5-6L18 19V2a1 1 0 00-1-1H2a1 1 0 00-1 1z"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linejoin="round"
+							fill="none"
+						/>
 					</svg>
 				</button>
 				<!-- Tabs -->
 				<button class="toolbar-btn">
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-						<rect x="1" y="5" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
-						<path d="M7 5V3a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 01-2 2h-2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+						<rect
+							x="1"
+							y="5"
+							width="12"
+							height="14"
+							rx="2"
+							stroke="currentColor"
+							stroke-width="1.8"
+							fill="none"
+						/>
+						<path
+							d="M7 5V3a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 01-2 2h-2"
+							stroke="currentColor"
+							stroke-width="1.8"
+							fill="none"
+						/>
 					</svg>
 				</button>
 			</div>

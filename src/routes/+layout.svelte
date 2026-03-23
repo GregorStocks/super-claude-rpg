@@ -5,7 +5,7 @@
 
 	let { children } = $props();
 
-	let selectedDevice = $state<DevicePreset>(devices[0]);
+	let selectedDevice = $state<DevicePreset>(devices[2]);
 
 	// Auto-scale to fit viewport
 	let containerEl = $state<HTMLDivElement | null>(null);

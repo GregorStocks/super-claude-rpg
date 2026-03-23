@@ -16,7 +16,9 @@ export default defineConfig(
 				...globals.node
 			},
 			parserOptions: {
-				projectService: true,
+				projectService: {
+					allowDefaultProject: ['*.config.js']
+				},
 				tsconfigRootDir: import.meta.dirname,
 				extraFileExtensions: ['.svelte']
 			}
@@ -203,7 +205,9 @@ export default defineConfig(
 			// Svelte $effect() references reactive vars as expression statements
 			'@typescript-eslint/no-unused-expressions': 'off',
 			// Svelte event handlers commonly do inline assignment
-			'no-return-assign': 'off'
+			'no-return-assign': 'off',
+			// With strict-boolean-expressions off, explicit === true is used for clarity
+			'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off'
 		}
 	},
 	{

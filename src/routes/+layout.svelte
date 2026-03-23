@@ -11,12 +11,16 @@
 	let containerEl = $state<HTMLDivElement | null>(null);
 	let scale = $state(1);
 
-	function recalcScale() {
-		if (!containerEl) return;
+	function recalcScale(): void {
+		if (containerEl === null) {
+			return;
+		}
 		const vw = window.innerWidth;
 		const vh = window.innerHeight;
-		const deviceW = selectedDevice.screenWidth + selectedDevice.bezel.left + selectedDevice.bezel.right;
-		const deviceH = selectedDevice.screenHeight + selectedDevice.bezel.top + selectedDevice.bezel.bottom;
+		const deviceW =
+			selectedDevice.screenWidth + selectedDevice.bezel.left + selectedDevice.bezel.right;
+		const deviceH =
+			selectedDevice.screenHeight + selectedDevice.bezel.top + selectedDevice.bezel.bottom;
 		// Leave space for picker bar (60px top) + some padding
 		const availH = vh - 80;
 		const availW = vw - 40;
@@ -25,8 +29,8 @@
 	}
 
 	$effect(() => {
-		// Re-run when device changes
-		selectedDevice;
+		// Re-run when device changes — access selectedDevice to track it
+		void selectedDevice;
 		recalcScale();
 	});
 </script>
@@ -42,7 +46,7 @@
 	<!-- Device picker -->
 	<div class="picker-bar">
 		<span class="picker-label">Device</span>
-		{#each devices as device}
+		{#each devices as device (device.id)}
 			<button
 				class="picker-btn"
 				class:active={selectedDevice.id === device.id}

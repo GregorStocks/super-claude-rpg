@@ -1,4 +1,4 @@
-export type DevicePreset = {
+export interface DevicePreset {
 	id: string;
 	name: string;
 	screenWidth: number;
@@ -9,7 +9,7 @@ export type DevicePreset = {
 	hasDynamicIsland: boolean;
 	hasHomeButton: boolean;
 	chrome: 'safari' | 'twitter-inapp';
-};
+}
 
 export const devices: DevicePreset[] = [
 	{
@@ -22,7 +22,7 @@ export const devices: DevicePreset[] = [
 		screenRadius: 44,
 		hasDynamicIsland: true,
 		hasHomeButton: false,
-		chrome: 'safari',
+		chrome: 'safari'
 	},
 	{
 		id: 'ipad',
@@ -34,7 +34,7 @@ export const devices: DevicePreset[] = [
 		screenRadius: 8,
 		hasDynamicIsland: false,
 		hasHomeButton: false,
-		chrome: 'safari',
+		chrome: 'safari'
 	},
 	{
 		id: 'iphone-se-twitter',
@@ -46,6 +46,6 @@ export const devices: DevicePreset[] = [
 		screenRadius: 0,
 		hasDynamicIsland: false,
 		hasHomeButton: true,
-		chrome: 'twitter-inapp',
-	},
+		chrome: 'twitter-inapp'
+	}
 ];

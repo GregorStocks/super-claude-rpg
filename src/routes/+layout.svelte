@@ -1,11 +1,11 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	import DeviceFrame from '$lib/DeviceFrame.svelte';
-	import { devices, type DevicePreset } from '$lib/devices';
+	import { devices } from '$lib/devices';
 
 	let { children } = $props();
 
-	let selectedDevice = $state<DevicePreset>(devices[2]);
+	let selectedDevice = $state(devices[2]);
 
 	// Auto-scale to fit viewport
 	let containerEl = $state<HTMLDivElement | null>(null);

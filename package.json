@@ -22,13 +22,13 @@
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"eslint": "^10.2.0",
 		"eslint-plugin-svelte": "^3.17.0",
-		"globals": "^17.4.0",
-		"prettier": "^3.8.1",
+		"globals": "^17.5.0",
+		"prettier": "^3.8.2",
 		"prettier-plugin-svelte": "^3.5.1",
 		"svelte": "^5.55.1",
 		"svelte-check": "^4.4.6",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.58.0",
+		"typescript-eslint": "^8.58.1",
 		"vite": "^8.0.4"
 	}
 }
